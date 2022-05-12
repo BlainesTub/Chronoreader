@@ -1,4 +1,4 @@
-package com.example.readometer;
+package com.example.chronoreader;
 
 import org.junit.Test;
 

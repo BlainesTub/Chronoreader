@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "Readometer"
+rootProject.name = "Chronoreader"

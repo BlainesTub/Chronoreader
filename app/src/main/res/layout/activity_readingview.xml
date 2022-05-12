@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:scrollbarSize="4dp"
+    tools:context=".ReadingViewActivity"
+    android:background="@color/appbackground">
+
+
+    <ProgressBar
+        android:id="@+id/bookProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="67"
+        android:scaleY="10"
+        android:progressTint="@color/green"/>
+
+
+    <TextView
+        android:id="@+id/bookTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bookProgress"
+        android:layout_margin="16dp"
+        android:text="The Name of the Wind"
+        android:textSize="@dimen/fontHeading"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/wppInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bookTitle"
+        android:hint="WPP input" />
+
+    <RelativeLayout
+        android:id="@+id/pageWidget"
+        android:layout_width="277dp"
+        android:layout_height="197dp"
+        android:layout_below="@id/bookTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/pagemargin"
+        android:backgroundTint="@color/pagebeige"
+        android:elevation="5dp"
+        android:padding="25dp"
+        android:rotation="270">
+
+
+        <ProgressBar
+            android:id="@+id/pageWidgetFill"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:max="100"
+            android:progress="0"
+            android:scaleY="50"
+            android:progressTint="@color/green">
+
+        </ProgressBar>
+
+        <SeekBar
+            android:id="@+id/pageWidgetSlider"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:max="31"
+            android:progress="0"
+            android:scaleX="1.2"
+            android:scaleY="50"
+            android:progressTint="@color/green"
+            android:thumbTint="@color/green"
+            app:tickMarkTint="#00000000"
+            app:tickMarkTintMode="src_in" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/manualInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pageWidget"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/manualButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:onClick="insertPartialPage"
+            android:paddingRight="30dp"
+            android:text="Manual Page"
+            android:backgroundTint="@color/buttonbeige"/>
+
+        <TextView
+            android:id="@+id/manualMeasurement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="320 Words" />
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/manualInput">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"></androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    </HorizontalScrollView>
+
+
+
+    <EditText
+        android:id="@+id/pgStart"
+        android:layout_width="81dp"
+        android:layout_height="36dp"
+        android:layout_above="@id/timerWidget"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/pagemargin"
+        android:backgroundTint="@color/pagebeige"
+        android:elevation="3dp"
+        android:ems="10"
+        android:hint="Pg Start"
+
+
+        android:inputType="number"
+        android:padding="5dp" />
+
+    <EditText
+        android:id="@+id/pgEnd"
+        android:layout_width="81dp"
+        android:layout_height="36dp"
+        android:layout_above="@id/timerWidget"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@id/pgStart"
+        android:background="@drawable/pagemargin"
+        android:backgroundTint="@color/pagebeige"
+        android:elevation="3dp"
+        android:ems="10"
+        android:hint="Pg End"
+        android:inputType="number"
+        android:padding="5dp" />
+
+    <TextView
+        android:id="@+id/pgCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/pgStart"
+        android:layout_toRightOf="@id/pgEnd"
+        android:text="12 Pages" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/pgStart"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@id/pgCount"
+        android:text="Done"
+        android:backgroundTint="@color/buttonbeige"
+        android:onClick="generateReport2"/>
+
+
+    <RelativeLayout
+        android:id="@+id/timerWidget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginBottom="0dp"
+        android:orientation="horizontal"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/pagemargin"
+            android:backgroundTint="@color/white">
+
+
+            <Chronometer
+                android:id="@+id/chronometer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="40dp"
+                android:textStyle="bold">
+            </Chronometer>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/playPause"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:onClick="playPauseAction"
+            android:backgroundTint="@color/primarygren"
+            android:text="PLause"
+            android:elevation="6dp">
+
+        </Button>
+
+    </RelativeLayout>
+
+</RelativeLayout>

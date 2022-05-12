@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="fontHeading">35sp</dimen>
+    <dimen name="fontNormal">24sp</dimen>
+    <dimen name="stdMargin">16dp</dimen>
+    <dimen name="subHeading">25sp</dimen>
+</resources>

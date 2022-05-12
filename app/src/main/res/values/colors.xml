@@ -7,6 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="buttonRed">#DD1E1E</color>
-    <color name="SliderBeige">#D8C28A</color>
+    <color name="pagebeige">#F7F0DE</color>
+    <color name="appbackground">#EEEEE9</color>
+    <color name="green">#ADDB8A</color>
+    <color name="buttonbeige">#E1D2A1</color>
+    <color name="primarygren">#5CE743</color>
 </resources>

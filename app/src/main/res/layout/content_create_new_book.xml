@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/appbackground"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="@dimen/stdMargin">
+
+        <EditText
+            android:id="@+id/bookTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/subHeading"
+            android:textStyle="bold"
+            android:hint="Book Title" />
+
+        <EditText
+            android:id="@+id/bookAuthor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/subHeading"
+            android:hint="Author"/>
+        <EditText
+            android:id="@+id/bookPageCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="# of Pages"/>
+
+        <Spinner
+            android:id="@+id/bookTypeSelector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints="Book Type" />
+
+        <EditText
+            android:id="@+id/bookWordsPerPage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Words Per Page"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/setPageGeometryHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="@dimen/subHeading"
+                android:text="@string/set_page_geometry"/>
+
+            <SeekBar
+                android:id="@+id/pageWidthSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/setPageGeometryHeading"/>
+            <SeekBar
+                android:id="@+id/marginWidthSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pageWidthSlider"/>
+
+            <SeekBar
+                android:id="@+id/pageHeightSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/marginWidthSlider"/>
+            <SeekBar
+                android:id="@+id/marginHeightSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/pageHeightSlider" />
+
+
+            <RelativeLayout
+                android:id="@+id/pageWidget"
+                android:layout_width="277dp"
+                android:layout_height="197dp"
+                android:layout_below="@id/pageHeightSlider"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                android:background="@drawable/pagemargin"
+                android:backgroundTint="@color/pagebeige"
+                android:elevation="5dp"
+                android:padding="25dp"
+                android:rotation="270">
+
+
+                <ProgressBar
+                    android:id="@+id/pageWidgetFill"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:max="100"
+                    android:progress="0"
+                    android:scaleY="50"
+                    android:progressTint="@color/green">
+
+                </ProgressBar>
+
+                <SeekBar
+                    android:id="@+id/pageWidgetSlider"
+                    style="@style/Widget.AppCompat.SeekBar.Discrete"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:max="31"
+                    android:progress="0"
+                    android:scaleX="1.2"
+                    android:scaleY="50"
+                    android:progressTint="@color/green"
+                    android:thumbTint="@color/green"
+                    app:tickMarkTint="#00000000"
+                    app:tickMarkTintMode="src_in" />
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

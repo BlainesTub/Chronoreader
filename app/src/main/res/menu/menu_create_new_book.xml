@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <item android:id="@+id/saveButton"
+        app:showAsAction="always"
+        android:title="Save"
+        android:onClick="createNewBookAction"
+        />
+
+</menu>
+
+
+
+
+<!-- Icon Items!
+<item
+android:id="@+id/PurpleSquare"
+android:icon="@drawable/abc_vector_test"
+app:showAsAction="ifRoom"
+android:title="purpleSquare!">
+</item>
+<item
+android:id="@+id/androidHead"
+android:icon="@drawable/ic_launcher_foreground"
+app:showAsAction="ifRoom"
+android:title="AndroidHead">
+</item>
+-->

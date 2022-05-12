@@ -1,14 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Chronoreader</string>
-    <string name="pagestart_EditText">pgStart</string>
-    <string name="pageend_EditText">pgEnd</string>
-    <string name="wpp_TextView">350</string>
-    <string name="calculate_button">Calculate WPM</string>
-    <string name="wpm_TextView">WPM</string>
-    <string name="start_buttonText">Start</string>
-    <string name="elapsedMinsView">Elapsed Minutes:</string>
-    <string name="standardPagesReadView">Standard Pages:</string>
-    <string name="manualPagesReadView">Manual Pages:</string>
-    <string name="totalWordsReadView">Total Words:</string>
-    <string name="wpmView">-- wpm</string>
+    <string name="book_title">The Name of the Wind</string>
+    <string name="readingReportData">00<br /> 00<br /> 00<br /> 00<br /> 00<br /> 00<br /> 00<br /> 00</string>
+    <string name="set_page_geometry">Set Page Geometry</string>
 </resources>
